@@ -21,7 +21,7 @@
 
 # Define users to keep
 # Add "Guest" and "Shared" to avoid issues with system functionalities.
-USERS_TO_KEEP=("root" "ncadmin" "daemon" "nobody" "Guest" "Shared") 
+USERS_TO_KEEP=("root" "ncadmin" "ncadminUI" "daemon" "nobody" "Guest" "Shared") 
 
 echo "Identifying users to delete (excluding: ${USERS_TO_KEEP[*]})"
 echo "---------------------------------------------------------"
