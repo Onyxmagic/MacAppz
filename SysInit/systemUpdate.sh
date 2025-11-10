@@ -77,4 +77,4 @@ echo "Press enter to start"
 read
 
 # 7. Install
-sudo softwareupdate --install "$LATEST_LABEL" --restart --agree-to-license
+sudo softwareupdate --install "$LATEST_LABEL" --restart --agree-to-license --force  --verbose
