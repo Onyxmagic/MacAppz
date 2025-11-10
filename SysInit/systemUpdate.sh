@@ -7,10 +7,10 @@
 #  ░███ ░░██████ ░███          ░███     ░███    
 #  ░███  ░░█████ ░░███     ███ ░███     ░███    
 #  █████  ░░█████ ░░█████████  █████    █████   
-#  ░░░░░    ░░░░░   ░░░░░░░░░  ░░░░░    ░░░░░    
+#  ░░░░░    ░░░░░   ░░░░░░░░░  ░░░░░    ░░░░░   
 
 # <------------------------------------------>
-# |  MacOS System updater from command line |
+# | MacOS System updater from command line  |
 # | Bendahon 2025                           |
 # | This script correctly parses the        |
 # | multi-line output of `softwareupdate -l`|
@@ -77,4 +77,4 @@ echo "Press enter to start"
 read
 
 # 7. Install
-sudo softwareupdate --install "$LATEST_LABEL" --reboot --agree-to-license
+sudo softwareupdate --install "$LATEST_LABEL" --restart --agree-to-license
