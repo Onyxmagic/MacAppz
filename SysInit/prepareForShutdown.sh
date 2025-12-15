@@ -8,7 +8,7 @@
 #  ░███ ░░██████ ░███          ░███     ░███    
 #  ░███  ░░█████ ░░███     ███ ░███     ░███    
 #  █████  ░░█████ ░░█████████  █████    █████   
-#  ░░░░░    ░░░░░   ░░░░░░░░░  ░░░░░    ░░░░░    
+#  ░░░░░    ░░░░░   ░░░░░░░░░  ░░░░░    ░░░░░   
 
 # <------------------------------------------------------>
 # | MacOS quickscript for setting power (if no flag set) |
@@ -16,9 +16,16 @@
 # | Then force logging out users                         |
 # | Set pmset to about 15 minutes after this runs        |
 # | Bendahon 2025                                        |
-# | 
+# | Red Flag                                             |
 # | V1.1                                                 |
+# | V1.2 - Added Jamf Recon + Policy                     |
 # <------------------------------------------------------>
+
+# -------- StartExisting -------- #
+# Send a heartbeat to JAMF
+sudo jamf recon
+# Grab any Policies
+sudo jamf policy
 
 # What Timezone are you in
 TARGET_TIMEZONE="Australia/Brisbane"
