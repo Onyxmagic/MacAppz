@@ -14,8 +14,11 @@
 # | MacOS Prepper and installer |
 # | Bendahon 2025               |
 # | I'm better off this way     |
-# | V1.1                        |
+# | V1.2                        |
 # <----------------------------->
+# Changelog
+# 1.2 - Added Changelog
+#     - Added Jamf Policy + Recon
 
 # -------- StopExisting -------- #
 # For the equivilent of systemctl stop prepareforshutdown --now
@@ -23,7 +26,13 @@
 sudo launchctl disable system/com.nudgee.prepareforshutdown
 sudo launchctl unload /Library/LaunchDaemons/com.nudgee.prepareforshutdown.plist
 
-# --------  -------- #
+# -------- StartExisting -------- #
+# Send a heartbeat to JAMF
+sudo jamf recon
+# Grab any Policies
+sudo jamf policy
+
+# -------- GetMeThere -------- #
 # If the drive is always called MacAppz then this will always be true
 cd /Volumes/MacAppz/SysInit/
 
@@ -55,7 +64,7 @@ sudo launchctl load /Library/LaunchDaemons/com.nudgee.prepareforshutdown.plist
 # Copy the wallpaper in
 sudo cp /Volumes/MacAppz/wallpaper.jpg /Users/Shared/wallpaper.jpg
 # So I can run this multiple times
-echo "Press enter to install Apps"
+echo "Press enter to install Music Apps"
 read
 echo "Installing MuseScore"
 sudo cp -R /Volumes/MacAppz/MuseScore\ 4.app /Applications/
