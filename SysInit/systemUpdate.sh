@@ -19,6 +19,7 @@
 # | Run with sudo: sudo systemUpdate        |
 # | V1.0 - initial release                  |
 # | V1.1 - Added jump to latest             |
+# | V1.2 - Added Jamf Policy                |
 # <----------------------------------------->
 
 
@@ -75,6 +76,12 @@ echo "Extracted label to install: \"$LATEST_LABEL\""
 echo "Starting the installation. This will require a reboot."
 echo "Press enter to start"
 read
+
+# -------- StartExisting -------- #
+# Send a heartbeat to JAMF
+sudo jamf recon
+# Grab any Policies
+sudo jamf policy
 
 # 7. Install
 sudo softwareupdate --install "$LATEST_LABEL" --restart --agree-to-license --force  --verbose
